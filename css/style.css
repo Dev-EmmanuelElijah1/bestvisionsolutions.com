@@ -1,0 +1,886 @@
+/* General CSS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;500;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+:root {
+
+    /* Text Colors */
+    --primary-color: #008AFC;
+    --secondary-color: #014EBC;
+    --light-pink-color: #FFFCF8;
+    --light-color: #CCCCCC;
+    --black-color: #000;
+    --white-color: #fff;
+    --box-shadow: 0.1rem -0.07rem 1.5rem 0.3rem rgb(0 0 0 / 26%);
+
+    /* font-family */
+    --primary-font: 'Lato', sans-serif;
+    --secondary-font: 'Montserrat', sans-serif;
+}
+
+body,
+html {
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+h1 {
+    color: var(--black-color);
+    font-size: 5.5rem;
+    font-weight: 800;
+    font-family: var(--secondary-font);
+    display: inline-block;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: var(--white-color);
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: var(--secondary-font);
+    display: inline-block;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+h2 span {
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.3;
+    font-family: var(--secondary-font);
+    color: var(--white-color);
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+    font-family: var(--secondary-font);
+    color: var(--black-color);
+    margin-bottom: 2rem;
+}
+
+h5 {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--white-color);
+    font-family: var(--secondary-font);
+    margin-bottom: 0.9375rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    color: var(--white-color);
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+.btn:focus {
+    text-decoration: none;
+    box-shadow: none;
+    outline: 0;
+}
+
+.bg-black {
+    background-color: var(--black-color);
+}
+
+.main-btn {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: 5rem;
+    text-transform: capitalize;
+    padding: 0.9rem 3rem;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    transition: all .3s linear;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+}
+
+.main-btn:hover {
+    background: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.view-link {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    color: var(--white-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.view-link:hover {
+    color: var(--white-color);
+    font-size: 1.6rem;
+}
+
+
+.wrapper {
+    padding: 7rem 0;
+}
+
+.sec-title h1 {
+    position: relative;
+}
+
+.sec-title h1::after {
+    position: absolute;
+    content: '';
+    background-color: var(--primary-color);
+    width: 50%;
+    height: 50%;
+    right: -4px;
+    bottom: 0%;
+    opacity: 0.5;
+}
+
+/* 01 navbar css */
+
+.header {
+    background-color: var(--black-color);
+    padding: 1rem 0;
+}
+
+.header .navbar-brand img {
+    width: 20rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.header .navbar-nav .nav-link {
+    color: var(--white-color);
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    margin: 0px 0.2rem;
+}
+
+/* dropdown menu */
+.header .dropdown-menu {
+    min-width: 13rem;
+    padding: 1.5rem 0;
+    background-color: var(--black-color);
+    border: 0.2rem solid var(--primary-color);
+}
+
+.header .dropdown-item {
+    line-height: 1.3;
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: var(--white-color);
+    font-weight: 600;
+    font-family: var(--secondary-font);
+}
+
+.dropdown-toggle::after {
+    content: "+";
+    border: none;
+    vertical-align: middle;
+    font-size: 1.6rem;
+}
+
+.nav-item:hover>.dropdown-toggle::after,
+.nav-link.dropdown-toggle.show {
+    color: var(--primary-color);
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover,
+.header .navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.navbar-nav li:hover>ul.dropdown-menu {
+    display: block;
+}
+
+.header .navbar-toggler {
+    color: var(--white-color);
+    font-size: 2rem;
+    height: 2.7rem;
+    padding: 0;
+}
+
+.header .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/*  Banner Section */
+.banner-wrapper {
+    margin-top: 8rem;
+    background-image: url('../images/banner/banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5rem;
+
+}
+
+/* parallax-effetct */
+
+.parallax {
+    position: relative;
+    background-position: left;
+    background-size: 48%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.parallax-1 {
+    position: relative;
+    background-position: right;
+    background-size: 48%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.parallax-main {
+    position: relative;
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.parallax.img1 {
+    background-image: url('../images/banner/Banner-1.jpg');
+    height: 100%;
+}
+
+.parallax.img2 {
+    background-image: url('../images/Services/web-designing.webp');
+    height: 608px;
+}
+
+.parallax.img3 {
+    background-image: url('../images/Services/web.png');
+    height: 608px;
+}
+
+.parallax.img4 {
+    background-image: url('../images/Services/brandingg.png');
+    height: 608px;
+}
+
+.parallax.img5 {
+    background-image: url('../images/Services/seo.webp');
+    height: 608px;
+}
+
+.parallax.img6 {
+    background-image: url('../images/Services/creativ.jpg');
+    height: 608px;
+}
+.parallax.img7 {
+    background-image: url('../images/Services/business-handshake-Cv3sTs4P.jpg');
+    height: 608px;
+}
+/* About CSS */
+.main-wrapper {
+    margin-top: 80vh;
+    background-color: var(--white-color);
+    width: 100%;
+}
+
+.main-wrapper .black-card {
+    position: absolute;
+    top: 25%;
+    left: -400px;
+    width: calc(100% - 20%);
+    box-shadow: var(--box-shadow);
+    border-radius: 2.5rem;
+    background-color: var(--black-color);
+    padding: 2.5rem;
+    text-align: left;
+    z-index: 1;
+}
+
+.main-wrapper .black-card.right {
+    right: -400px;
+    left: unset;
+}
+
+
+/* Process Css  */
+
+.process-wrapper {
+    background-color: var(--black-color);
+}
+
+.process-wrapper h1,
+.work-wrapper h1 {
+    color: var(--white-color);
+}
+
+.process-wrapper .process-content {
+    padding: 4rem 6rem;
+    position: relative;
+}
+
+.process-wrapper .process-content::after {
+    position: absolute;
+    content: '';
+    width: 40%;
+    margin: auto;
+    bottom: 0;
+    border-bottom: 1px solid var(--white-color);
+}
+
+.process-wrapper .process-content span {
+    color: var(--primary-color);
+    font-size: 7rem;
+    font-weight: 800;
+    margin-right: 2rem;
+}
+
+/* Work CSS */
+.work-wrapper {
+    background: var(--black-color);
+}
+
+/* Testimonial CSS */
+.testimonial-wrapper h2 {
+    color: var(--black-color);
+}
+
+.testimonial-wrapper .card {
+    border: none;
+    background-color: var(--light-pink-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+    margin: 2rem;
+    padding: 4rem 2rem;
+}
+
+.testimonial-wrapper .card i {
+    color: rgb(255, 191, 0);
+    font-size: 1.4rem;
+}
+
+.testimonial-wrapper .card p {
+    color: var(--black-color);
+}
+
+.testimonial-wrapper .card h5 {
+    color: var(--black-color);
+    font-weight: 700;
+}
+
+.testimonial-wrapper .carousel-indicators {
+    margin-bottom: -3rem;
+}
+
+.testimonial-wrapper .carousel-indicators button {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--black-color);
+}
+
+/* Footer CSS */
+
+.footer_wrapper {
+    background-color: var(--black-color);
+    padding-bottom: 0rem;
+}
+
+.footer_wrapper .footer-logo img {
+    width: 25rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.footer_wrapper h5 {
+    color: var(--white-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.footer_wrapper h5 a {
+    color: var(--white-color);
+}
+
+.footer_wrapper ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+
+.footer_wrapper ul li {
+    margin-right: 1.5rem;
+}
+
+.footer_wrapper .copyright-section p {
+    margin: 0;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+
+/* whatsapp intgration */
+.whatsapp-icon {
+    position: relative;
+}
+
+.whatsapp-icon .whatsapp {
+    position: fixed;
+    width: 5rem;
+    z-index: 1;
+    bottom: 1rem;
+    right: 0.5rem;
+}
+
+.whatsapp-icon .whatsapp img {
+    width: 4.2rem;
+
+}
+
+/* =====================================
+About Page CSS 
+=======================================*/
+
+/* ===================================================================
+ * # about
+ *
+ * ------------------------------------------------------------------- */
+.s-about {
+  padding-top: 18rem;
+  padding-bottom: 18rem;
+  background-color: #121212;
+  position: relative;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## about process
+ * ------------------------------------------------------------------- */
+.process {
+  margin-top: 6.6rem;
+  counter-reset: ctr;
+}
+
+.process h4 {
+  padding-left: 7rem;
+  margin-bottom: 2.1rem;
+  position: relative;
+}
+
+.process h4::before {
+  content: counter(ctr);
+  counter-increment: ctr;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #cf2900;
+  height: 48px;
+  width: 48px;
+  line-height: 48px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+
+.item-process {
+  position: relative;
+  min-height: 24.6rem;
+  margin-bottom: 3rem;
+}
+
+.item-process:nth-child(2n+1) {
+  padding-right: 30px;
+}
+
+.item-process:nth-child(2n+2) {
+  padding-left: 30px;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * about
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width:1000px) {
+  .item-process:nth-child(2n+1) {
+    padding-right: 25px;
+  }
+
+  .item-process:nth-child(2n+2) {
+    padding-left: 25px;
+  }
+
+}
+
+@media only screen and (max-width:1000px) {
+  .s-about {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+
+  .item-process:nth-child(n) {
+    padding: 0 15px;
+    min-height: 0;
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+  .s-about {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  .process h4 {
+    padding-left: 6rem;
+  }
+
+  .process h4::before {
+    font-size: 1.8rem;
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    top: -4px;
+  }
+
+  .item-process:nth-child(n) {
+    padding: 0 10px;
+  }
+
+}
+
+@media only screen and (max-width:400px) {
+  .process h4 {
+    padding-left: 5.8rem;
+  }
+
+  .process h4::before {
+    font-size: 1.6rem;
+    height: 39px;
+    width: 39px;
+    line-height: 39px;
+    top: -5px;
+  }
+
+  .item-process:nth-child(n) {
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+}
+
+
+/* ===================================================================
+ * # services
+ *
+ * ------------------------------------------------------------------- */
+.s-services {
+  padding-top: 18rem;
+  padding-bottom: 18rem;
+  position: relative;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## services list
+ * ------------------------------------------------------------------- */
+.services {
+  margin-top: 9rem;
+}
+
+.item-service {
+  margin-bottom: .9rem;
+}
+
+.item-service h3 {
+  margin-top: 0;
+}
+
+.item-service:nth-child(2n+1) {
+  padding-right: 50px;
+}
+
+.item-service:nth-child(2n+2) {
+  padding-left: 50px;
+}
+
+.item-service__text {
+  margin-left: 7.2rem;
+}
+
+.item-service__icon {
+  float: left;
+  color: #cf2900;
+  font-size: 4.5rem;
+  margin-top: -1.8rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * services
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width:1200px) {
+  .services {
+    max-width: 1000px;
+  }
+
+  .services .item-service:nth-child(2n+1) {
+    padding-right: 30px;
+  }
+
+  .services .item-service:nth-child(2n+2) {
+    padding-left: 30px;
+  }
+
+}
+
+@media only screen and (max-width:1000px) {
+  .s-services {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+
+  .services .item-service:nth-child(2n+1) {
+    padding-right: 20px;
+  }
+
+  .services .item-service:nth-child(2n+2) {
+    padding-left: 20px;
+  }
+
+  .item-service__text {
+    margin-left: 0;
+  }
+
+  .item-service__icon {
+    float: none;
+    margin-top: 0;
+    font-size: 4.2rem;
+  }
+
+}
+
+@media only screen and (max-width:800px) {
+  .services {
+    margin-top: 4.2rem;
+  }
+
+  .services .item-service:nth-child(n) {
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 700px;
+  }
+
+  .services .service-icon {
+    font-size: 4.2rem;
+    float: none;
+    margin-top: 0;
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+  .s-services {
+    padding-top: 12rem;
+  }
+
+  .services .item-service:nth-child(n) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+}
+
+@media only screen and (max-width:400px) {
+  .services .item-service:nth-child(n) {
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+}
+
+
+
+.about .abilities-wrapper ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about .abilities-wrapper h3 {
+    color: var(--black-color);
+}
+
+.about .abilities-wrapper ul li p {
+    color: var(--black-color)
+}
+
+/* Team CSS */
+
+.team-carousel .owl-dots,
+.testimonial-carousel .owl-dots {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.team-carousel .owl-dot,
+.testimonial-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  background: #dddddd;
+}
+
+.team-carousel .owl-dot.active,
+.testimonial-carousel .owl-dot.active {
+  background: #FDAC53;
+}
+
+.team-item .team-overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background: rgba(253, 172, 83, 0.7);
+  border: 15px solid #ffffff;
+  transition: .5s;
+}
+
+.team-item:hover .team-overlay {
+  opacity: 1;
+}
+
+.contact-form .help-block ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+/* ====================================
+Portfolio Page CSS
+====================================== */
+
+.portfolio-services .card-detail {
+    box-shadow: var(--box-shadow);
+    background-color: var(--black-color);
+    border-radius: 2rem;
+    padding: 3rem;
+    margin-top: -2rem;
+}
+
+.portfolio-services .card-detail h5 {
+    font-weight: 800;
+    font-family: var(--secondary-font);
+}
+
+/* ====================================
+Contact Page CSS
+====================================== */
+
+.contact .get-in-touch .card {
+    background-color: var(--white-color);
+    min-height: 36rem;
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.contact .card i {
+    font-size: 8rem;
+    margin-bottom: 3rem;
+}
+
+.contact .card h4 {
+    font-weight: 800;
+}
+
+.contact .card p {
+    color: var(--black-color);
+}
+
+.contact .card p:last-child {
+    font-family: var(--secondary-font);
+    font-weight: 700;
+}
+
+.form-section {
+    padding: 10rem;
+    background-color: var(--black-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 2rem;
+}
+
+.form-section .form-control:focus {
+    box-shadow: none;
+    border-color: var(--light-color);
+
+}
+
+.form-section input.form-control {
+    height: 4.5rem;
+    border: 0.1rem solid var(--light-color);
+    font-size: 1.5rem;
+}
+
+.form-section textarea {
+    border: 0.1rem solid var(--light-color);
+    font-size: 1.5rem;
+}
